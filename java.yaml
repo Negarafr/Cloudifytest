@@ -1,0 +1,17 @@
+################################################################
+# Blueprint node types.
+#
+# specific types for Java.
+################################################################
+tosca_definitions_version: cloudify_dsl_1_0
+
+imports:
+  - http://www.getcloudify.org/spec/cloudify/3.2/types.yaml
+
+
+node_types:
+  java.nodes.Java:
+    derived_from: cloudify.nodes.ApplicationModule
+    interfaces:
+      cloudify.interfaces.lifecycle:
+      start: scripts/install-java.sh
